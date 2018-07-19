@@ -9,6 +9,53 @@
  * @version 1.0
  */
 
+
+$(document).ready(function() {
+
+	function dateFormat(pubDate) {
+		var date = new Date(pubDate);
+		var months = Array("January", "February", "March", "Abril", "May", "June", "July", "Agust", "September", "Octobar", "November","December");
+		return date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+	  }
+	
+	
+	//feed to parse
+	var feed = "https://cors-anywhere.herokuapp.com/http://www.dailyjanakantha.com/rss.php";
+	
+	$.ajax(feed, {
+		accepts:{
+			xml:"application/rss+xml"
+		},
+		dataType:"xml",
+		success:function(data) {
+			//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+			//'+'<a href="' + el.find('link').text()+'">'+ + '</a>
+			var newsarray=[];
+			$(data).find("item").each(function () { // or "item" or whatever suits your feed
+				var el = $(this);
+			 
+				newsarray.push('<li><a class="fnfnewstitle">'+el.find('title').text()+'</a><br><a><span>'+dateFormat(el.find("pubDate").text())+el.find("description").text()+'</span></a><a class="vanity" href="'+el.find("link").text()+'">Read more</a></li>');
+		 
+	
+				console.log("------------------------");
+				console.log("Publication Date:" + el.find("pubDate").text());
+				console.log("title      : " + el.find("title").text());
+				console.log("link       : " + el.find("link").text());
+				console.log("description: " + el.find("description").text());
+			});
+			document.getElementById("news").innerHTML = newsarray;
+	
+	
+		}	
+	});
+	
+	});
+	
+	$(document).ready(function () {
+		$("div").smartmarquee();
+	});	
+
+
 $.fn.smartmarquee = function(vars) {
 	var defaults = {
 	    duration: 1000,      // animate duration

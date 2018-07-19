@@ -1,8 +1,36 @@
-.smartmarquee {
+/*Basic Deseign*/
+
+body {
+	font-family: tahoma;
+	font-size: 11px;
+}
+a { cursor: pointer }
+.fnfexample {
+	height: 300px;
+	width: 300px;
+	-moz-box-shadow: 1px 1px 5px #999;
+	-webkit-box-shadow: 1px 1px 5px #999;
+	box-shadow: 1px 1px 5px #999;
+}
+.fnfexample .container {
+	margin: 0;
+	padding: 0;
+}
+.fnfexample .container li {
+	width: 285px;
+	margin: 0 0 0 5px;
+	padding: 5px 0 5px 0;
+	border-bottom: 1px dotted #999
+}
+
+
+/*Style the Scrolling text*/
+
+.fnfsmartmarquee {
 	position: relative;
 	overflow: hidden;
 }
-.smartmarquee .container {
+.fnfsmartmarquee .container {
 	position: absolute;
 
     font: 1.25em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
@@ -24,3 +52,44 @@
 .vanity a:hover {
     color: #F65314;
 }
+
+
+/* Style News Title*/
+.fnfnewstitle {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 2vw;
+    width: 20vw;
+    margin-top: calc(20vh - 5vw);
+    text-align: center;
+    background: linear-gradient(
+        60deg,
+        hsl(0, 75%, 50%) 10%,
+        hsl(20, 75%, 50%) 10%,
+        hsl(20, 75%, 50%) 25%,
+        hsl(50, 75%, 50%) 25%,
+        hsl(50, 75%, 50%) 40%,
+        hsl(130, 75%, 50%) 40%,
+        hsl(130, 75%, 50%) 55%,
+        hsl(200, 75%, 50%) 55%,
+        hsl(200, 75%, 50%) 70%,
+        hsl(260, 75%, 50%) 70%,
+        hsl(260, 75%, 50%) 85%,
+        hsl(0, 75%, 50%) 85%
+    );
+
+    text-shadow: 0.5px -0.6vw #fff4;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 10s BeProud linear infinite,
+    3s Always ease alternate infinite;
+}
+
+@keyframes BeProud {
+    100% { background-position: 100vw 0px; }
+}
+
+@keyframes Always {
+    100% { transform: scale(1.1);}
+}
+
