@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>News Feed Plugin</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="../jquery.smartmarquee.css" rel="stylesheet">
+	<script src="../jquery.smartmarquee.js"></script>
+	<script language="javascript">
+		$(document).ready(function () {
+			$("div").smartmarquee();
+		});
+	</script> 
+	<style type="text/css">
+		body {
+			font-family: tahoma;
+			font-size: 11px;
+		}
+		a { cursor: pointer }
+		.example {
+			height: 300px;
+			width: 300px;
+			-moz-box-shadow: 1px 1px 5px #999;
+			-webkit-box-shadow: 1px 1px 5px #999;
+			box-shadow: 1px 1px 5px #999;
+		}
+		.example .container {
+			margin: 0;
+			padding: 0;
+		}
+		.example .container li {
+			width: 285px;
+			margin: 0 0 0 5px;
+			padding: 5px 0 5px 0;
+			border-bottom: 1px dotted #999
+		}
+	</style>
+</head>
+
+<body>
+	<img src="img/head.jpg" width="301" />  
+	<div class="smartmarquee example">
+		<ul class="container" id="news">
+			<!--<li>
+				<a>Misafir - er-an</a>
+				<br><a>Mirac gecesinde (göğe cıkmak) dünyanın küre oldu görülmemiş mi. Böyle söyleseydi daha inandırıcı ...</a>
+				
+			</li>-->
+			
+		</ul>
+	</div>
+
+	<script>
+	
+
+
+$(document).ready(function() {
+
+function dateFormat(pubDate) {
+	var date = new Date(pubDate);
+	var months = Array("January", "February", "March", "Abril", "May", "June", "July", "Agust", "September", "Octobar", "November","December");
+	return date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+  }
+
+
+//feed to parse
+var feed = "https://cors-anywhere.herokuapp.com/http://www.dailyjanakantha.com/rss.php";
+
+$.ajax(feed, {
+	accepts:{
+		xml:"application/rss+xml"
+	},
+	dataType:"xml",
+	success:function(data) {
+		//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+		//'+'<a href="' + el.find('link').text()+'">'+ + '</a>
+		var newsarray=[];
+		$(data).find("item").each(function () { // or "item" or whatever suits your feed
+			var el = $(this);
+		 
+			newsarray.push('<li><a>'+el.find('title').text()+'</a><br><a><span>'+dateFormat(el.find("pubDate").text())+el.find("description").text()+'</span></a><a class="vanity" href="'+el.find("link").text()+'">Read more</a></li>');
+	 
+
+			console.log("------------------------");
+			console.log("Publication Date:" + el.find("pubDate").text());
+			console.log("title      : " + el.find("title").text());
+			console.log("link       : " + el.find("link").text());
+			console.log("description: " + el.find("description").text());
+		});
+		document.getElementById("news").innerHTML = newsarray;
+
+
+	}	
+});
+
+});
+
+	
+	</script>
+
+</body>
+</html>

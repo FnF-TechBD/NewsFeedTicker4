@@ -1,0 +1,26 @@
+.smartmarquee {
+	position: relative;
+	overflow: hidden;
+}
+.smartmarquee .container {
+	position: absolute;
+
+    font: 1.25em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+/* Style the Link */
+
+.vanity {
+    color: rgb(243, 35, 63);
+    text-align: center;
+    font: 1.0em 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+}
+
+.vanity a{
+    color: rgb(63, 144, 226);
+    transition: color .5s;
+    text-decoration: none;
+}
+
+.vanity a:hover {
+    color: #F65314;
+}
