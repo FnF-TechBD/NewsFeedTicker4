@@ -8,6 +8,7 @@ a { cursor: pointer }
 .fnfexample {
 	height: 300px;
 	width: 300px;
+	
 	-moz-box-shadow: 1px 1px 5px #999;
 	-webkit-box-shadow: 1px 1px 5px #999;
 	box-shadow: 1px 1px 5px #999;
@@ -56,8 +57,9 @@ a { cursor: pointer }
 
 /* Style News Title*/
 .fnfnewstitle {
+	
     font-family: 'Bowlby One SC', cursive;
-    font-size: 2vw;
+    font-size: 1.5vw;
     width: 20vw;
     margin-top: calc(20vh - 5vw);
     text-align: center;
