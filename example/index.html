@@ -8,11 +8,31 @@
 </head>
 
 <body>
-	<img src="img/head.jpg" width="301" />  
-	<div class="fnfsmartmarquee fnfexample">
+	
+		 <div class="top-container"> 
+		<img class="fnfresizeimage" src="img/head.jpg"/>  
+
+		<select id="mySelect"  change="fnfchangewidthFunction()">
+			    <option value="200">200 x 200</option>
+			    <option value="300">300 x 300</option>	
+				<option value="400">400 x 400</option>
+				<option value="500">500 x 500</option>
+				<option value="600">600 x 600</option>
+			  </select>
+			  <button id="bt1" >Reset</button>
+			</div>
+	<div  class="fnfsmartmarquee fnfexample">
+			
+
+ 
 		<ul class="container" id="news">
+			
 		</ul>
 	</div>
 	<script src="../jquery.smartmarquee.js"></script>
 </body>
 </html>
+
+
+
+

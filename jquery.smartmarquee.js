@@ -11,6 +11,39 @@
 
 
 $(document).ready(function() {
+	
+	
+    
+	$("#mySelect").change(function fnfchangewidthFunction() {
+
+		var x = document.getElementById("mySelect").value;
+		$( ".fnfexample" ).animate({
+			
+			width: x,
+			height:x, 
+			 }, 1500 );
+		
+		$( ".container li" ).animate({
+				width: x-15, 
+				 }, 1500 );	
+				 
+
+		
+
+		});
+
+	
+ /** STyle the Button */
+  
+	  $( "#bt1" ).click(function() {
+		$( ".fnfexample" ).animate({
+		 width: "300px",
+		 height: "300px",    
+		  }, 1500 );
+		  $( ".container li" ).animate({
+			width: "285px",    
+			 }, 1500 );
+	  });
 
 	function dateFormat(pubDate) {
 		var date = new Date(pubDate);
@@ -52,11 +85,11 @@ $(document).ready(function() {
 	});
 	
 	$(document).ready(function () {
-		$("div").smartmarquee();
+		$("div").fnfsmartmarquee();
 	});	
 
 
-$.fn.smartmarquee = function(vars) {
+$.fn.fnfsmartmarquee = function(vars) {
 	var defaults = {
 	    duration: 1000,      // animate duration
 	    loop : true,         
