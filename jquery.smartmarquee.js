@@ -27,8 +27,15 @@ $(document).ready(function() {
 				width: x-15, 
 				 }, 1500 );	
 				 
-
-		
+         
+		$( ".top-container" ).animate({
+				width: x, 
+					}, 1500 );	
+					 
+		$( ".top-container .fnfresizeimage" ).animate({
+				width: x-115, 
+		           }, 1500 );	
+					 
 
 		});
 

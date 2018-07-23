@@ -5,6 +5,11 @@ body {
 	font-size: 11px;
 }
 a { cursor: pointer }
+.fnf-layout2-maincontainer{
+    height:100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
 .fnfexample {
 	height: 300px;
 	width: 300px;
@@ -34,7 +39,7 @@ a { cursor: pointer }
 	border-bottom: 1px dotted #999
 }
  .top-container .fnfresizeimage{
-	width:100px;
+	width:185px;
 	max-width:100%;
 	height:50px;
 	
@@ -113,42 +118,51 @@ a { cursor: pointer }
 }
 
 
-/*Reset Button Design*/
-/* Reset */
-.top-container #btn1{
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #668ad8;/*Button Color*/
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
-}
-.top-container #btn1:active {/*on Click*/
-    -ms-transform: translateY(4px);
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*Move down*/
-    border-bottom: none;/*disappears*/
-}
+
   /** List Design */
+  select {
+   /* <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;"/>*/
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+    background-color:rgb(86, 125, 233);
+    background-repeat:no-repeat;
+    background-position: right 10px top 15px;
+    background-size: 16px 16px;/*CHange*/
+    position: absolute;
+    border-top-right-radius: 5px;
+    color:white;
+    padding:12px;/*change*/
+    width:auto;
+    font-family:arial,tahoma;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-align:center;
+    text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -webkit-appearance: none;
+    border:0;
+    outline:0;
+    -webkit-transition:0.3s ease all;
+         -moz-transition:0.3s ease all;
+          -ms-transition:0.3s ease all;
+           -o-transition:0.3s ease all;
+              transition:0.3s ease all;
+  }
   
-
-  .top-container #mySelect{
-	border: 0 !important;  /*Removes border*/
-	-webkit-appearance: none;  /*Removes default chrome and safari style*/
-	-moz-appearance: none; /* Removes Default Firefox style*/
-	appearance:none;
-	background: #0088cc url(img/select-arrow.png) no-repeat 90% center;
-	width: 100px; /*Width of select dropdown to give space for arrow image*/
-	max-width:100%;
-	text-indent: 0.01px; /* Removes default arrow from firefox*/
-	text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
-	color: #FFF;
-	border-radius: 15px;
-	padding: 5px;
-	box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
-	border-radius: 10px 0;
-}
-
+  #mySelect {
+    background-color:rgb(94, 163, 241);
+  }
+  
+  #mySelect:hover {
+    background-color:#2980B9;
+  }
+  
+  
+  
+  select:focus, select:active {
+    border:0;
+    outline:0;
+  }
 
    
