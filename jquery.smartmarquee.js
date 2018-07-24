@@ -8,36 +8,36 @@
  * @author Samet TEMIZER
  * @version 1.0
  */
+ 		 
+function fnfchangewidthFunction(width) {
 
+	var x = width;
+	
+	$( ".fnfexample" ).animate({
+		
+		width: x-50,
+		height:x, 
+		 }, 1500 );
+	
+	$( ".container li" ).animate({
+			width: x-15-50, 
+			 }, 1500 );	
+			 
+	 
+	$( ".top-container" ).animate({
+			width: x-95, 
+				}, 1500 );	
+				 
+	$( ".top-container .fnfresizeimage" ).animate({
+			width: x-115-95, 
+			   }, 1500 );	
+				 
+
+	};
 
 $(document).ready(function() {
 	
-	
-    
-	$("#mySelect").change(function fnfchangewidthFunction() {
 
-		var x = document.getElementById("mySelect").value;
-		$( ".fnfexample" ).animate({
-			
-			width: x,
-			height:x, 
-			 }, 1500 );
-		
-		$( ".container li" ).animate({
-				width: x-15, 
-				 }, 1500 );	
-				 
-         
-		$( ".top-container" ).animate({
-				width: x, 
-					}, 1500 );	
-					 
-		$( ".top-container .fnfresizeimage" ).animate({
-				width: x-115, 
-		           }, 1500 );	
-					 
-
-		});
 
 	
  /** STyle the Button */

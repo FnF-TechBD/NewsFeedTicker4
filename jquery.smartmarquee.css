@@ -12,7 +12,7 @@ a { cursor: pointer }
 }
 .fnfexample {
 	height: 300px;
-	width: 300px;
+	width: 250px;
 	
 	-moz-box-shadow: 1px 1px 5px #999;
 	-webkit-box-shadow: 1px 1px 5px #999;
@@ -20,7 +20,7 @@ a { cursor: pointer }
 }
 .top-container{
 	height:50px;
-	width: 300px;
+	width: 205px;
 	
 	-moz-box-shadow: 1px 1px 5px #999;
 	-webkit-box-shadow: 1px 1px 5px #999;
@@ -39,7 +39,7 @@ a { cursor: pointer }
 	border-bottom: 1px dotted #999
 }
  .top-container .fnfresizeimage{
-	width:185px;
+	width:140px;
 	max-width:100%;
 	height:50px;
 	
@@ -120,49 +120,132 @@ a { cursor: pointer }
 
 
   /** List Design */
-  select {
-   /* <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;"/>*/
-    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
-    background-color:rgb(86, 125, 233);
-    background-repeat:no-repeat;
-    background-position: right 10px top 15px;
-    background-size: 16px 16px;/*CHange*/
-    position: absolute;
-    border-top-right-radius: 5px;
-    color:white;
-    padding:12px;/*change*/
-    width:auto;
-    font-family:arial,tahoma;
-    font-size:16px;
-    font-weight:bold;
-    color:#fff;
-    text-align:center;
-    text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
-    border-radius:3px;
-    -webkit-border-radius:3px;
-    -webkit-appearance: none;
-    border:0;
-    outline:0;
-    -webkit-transition:0.3s ease all;
-         -moz-transition:0.3s ease all;
-          -ms-transition:0.3s ease all;
-           -o-transition:0.3s ease all;
-              transition:0.3s ease all;
-  }
-  
-  #mySelect {
-    background-color:rgb(94, 163, 241);
-  }
-  
-  #mySelect:hover {
-    background-color:#2980B9;
-  }
-  
-  
-  
-  select:focus, select:active {
-    border:0;
-    outline:0;
-  }
 
+section, footer, nav{
+	display: block;
+}
+
+
+/*----------------------------
+	The Navigation Menu
+-----------------------------*/
+.top-container #colorNav{
+    width:50px;
+    height:40px;
+    position: relative;
+    float: right;
+    align-content: justify;
    
+
+}
+
+.top-container #colorNav > ul{
+	width: 450px; /* Increase when adding more menu items */
+    margin:0 auto;
+
+}
+
+.top-container #colorNav > ul > li{ /* will style only the top level li */
+	list-style: none;
+	box-shadow: 0 0 10px rgba(100, 100, 100, 0.2) inset,1px 1px 1px #CCC;
+	display: inline-block;
+	line-height: 1;
+	margin: 1px;
+	border-radius: 3px;
+	position:relative;
+}
+
+.top-container #colorNav > ul > li > a{
+	color:inherit;
+	text-decoration:none !important;
+	font-size:24px;
+	padding: 13px;
+}
+
+.top-container #colorNav li ul{
+	position:absolute;
+	list-style:none;
+	text-align:center;
+	width:90px;
+	left:110%;
+	margin-left:-80px;
+	top:30px;
+	font:bold 12px 'Open Sans Condensed', sans-serif;
+	
+	/* This is important for the show/hide CSS animation */
+	max-height:0px;
+	overflow:hidden;
+	
+	-webkit-transition:max-height 0.4s linear;
+	-moz-transition:max-height 0.4s linear;
+	transition:max-height 0.4s linear;
+}
+
+.top-container #colorNav li ul li{
+	background-color:#313131;
+}
+
+.top-container #colorNav li ul li a{
+	padding:12px;
+	color:#fff !important;
+	text-decoration:none !important;
+	display:block;
+}
+
+.top-container #colorNav li ul li:nth-child(odd){ /* zebra stripes */
+	background-color:#363636;
+}
+
+.top-container #colorNav li ul li:hover{
+	background-color:#444;
+}
+
+.top-container #colorNav li ul li:first-child{
+	border-radius:3px 3px 0 0;
+	margin-top:25px;
+	position:relative;
+}
+
+.top-container #colorNav li ul li:first-child:before{ /* the pointer tip */
+	content:'';
+	position:absolute;
+	width:5px;
+	height:5px;
+	border:5px solid transparent;
+	border-bottom-color:#313131;
+	left:50%;
+	top:-10px;
+	margin-left:-5px;
+}
+
+.top-container #colorNav li ul li:last-child{
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+.top-container #colorNav li:hover ul{
+	max-height:200px; /* Increase when adding more dropdown items */
+}
+
+
+/*----------------------------
+	Color Themes
+-----------------------------*/
+
+
+.top-container #colorNav li.green{
+	/* This is the color of the menu item */
+	background-color:#00c08b;
+	
+	/* This is the color of the icon */
+	color:#127a5d;
+}
+
+#colorNav li.red{		background-color:#ea5080;color:#aa2a52;}
+#colorNav li.blue{		background-color:#53bfe2;color:#2884a2;}
+#colorNav li.yellow{	background-color:#f8c54d;color:#ab8426;}
+#colorNav li.purple{	background-color:#df6dc2;color:#9f3c85;}
+
